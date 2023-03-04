@@ -4,7 +4,7 @@ const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 
 const scoreBoard_div = document.querySelector(".score-board");
-const result_div = document.querySelector(".result");
+const result_div = document.querySelector(".result > p");
 
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
@@ -16,6 +16,8 @@ function userWin(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
+
+  result_div.innerHTML = userChoice + " beats " + computerChoice + ". You Win! 🔥"
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
