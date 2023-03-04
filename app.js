@@ -6,9 +6,9 @@ const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_div = document.querySelector(".result > p");
 
-const rock_div = document.getElementById("rock");
-const paper_div = document.getElementById("paper");
-const scissors_div = document.getElementById("scissors");
+const rock_div = document.getElementById("r");
+const paper_div = document.getElementById("p");
+const scissors_div = document.getElementById("s");
 
 const choice = ["r", "p", "s"];
 
@@ -31,6 +31,8 @@ function userWin(userChoice, computerChoice) {
   )}${smallUserWord} beats ${convertToWord(
     computerChoice
   )}${smallcompWord}. You Win! 🔥`;
+
+  document.getElementById(userChoice).classList.add('green-glow');
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
@@ -56,12 +58,11 @@ function userLose(userChoice, computerChoice) {
 }
 
 function userDraw(userChoice, computerChoice) {
-
-    result_div.innerHTML = `${convertToWord(
-        userChoice
-      )}${smallUserWord} meets ${convertToWord(
-        computerChoice
-      )}${smallcompWord}. Its a draw! 🤔`;
+  result_div.innerHTML = `${convertToWord(
+    userChoice
+  )}${smallUserWord} meets ${convertToWord(
+    computerChoice
+  )}${smallcompWord}. Its a draw! 🤔`;
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
