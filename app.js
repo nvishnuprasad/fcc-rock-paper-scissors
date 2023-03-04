@@ -1,7 +1,7 @@
-const userScore = 0;
-const computerScore = 0;
+var userScore = 0;
+var computerScore = 0;
 const userScore_span = document.getElementById("user-score");
-const computerScore_span = document.getElementById("computerScore-score");
+const computerScore_span = document.getElementById("computer-score");
 
 const scoreBoard_div = document.querySelector(".score-board");
 const result_div = document.querySelector(".result");
@@ -13,10 +13,17 @@ const scissors_div = document.getElementById("scissors");
 const choice = ["r", "p", "s"];
 
 function userWin() {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
   console.log("User Wins");
+  console.log(userScore)
 }
 
 function userLose() {
+    computerScore++
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
   console.log("User Loses");
 }
 
