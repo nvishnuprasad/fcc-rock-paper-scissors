@@ -10,9 +10,22 @@ const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 
+const choice = ['r', 'p', 's']
+
 function game(userChoice) {
-  console.log("⭐⭐ ⭐" + userChoice);
+    const computerChoice = getComputerChoice();
+    console.log("Computer " + computerChoice)
+  console.log("User  " + userChoice);
 }
+
+function getComputerChoice(){
+    randomNumber = Math.floor(Math.random()*3);
+    return choice[randomNumber];
+
+}
+
+getComputerChoice();
+
 
 function main() {
   rock_div.addEventListener("click", function () {
