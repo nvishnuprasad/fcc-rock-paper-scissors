@@ -12,12 +12,19 @@ const scissors_div = document.getElementById("scissors");
 
 const choice = ["r", "p", "s"];
 
+
+function convertToWord(letter){
+if (letter === "r" ) return "Rock";
+if (letter === "p" ) return "Paper";
+if (letter === "s" ) return "Scissors";
+}
+
 function userWin(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
 
-  result_div.innerHTML = userChoice + " beats " + computerChoice + ". You Win! 🔥"
+  result_div.innerHTML = convertToWord(userChoice) + " beats " + convertToWord(computerChoice) + ". You Win! 🔥"
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
