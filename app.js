@@ -22,7 +22,6 @@ function convertToWord(letter) {
 }
 
 function userWin(userChoice, computerChoice) {
-
   const userChoice_div = document.getElementById(userChoice);
   userScore++;
   userScore_span.innerHTML = userScore;
@@ -36,9 +35,7 @@ function userWin(userChoice, computerChoice) {
 
   userChoice_div.classList.add("green-glow");
 
-  setTimeout(function () {
-    userChoice_div.classList.remove("green-glow");
-  }, 540);
+  setTimeout(() => userChoice_div.classList.remove("green-glow"), 540);
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
@@ -48,8 +45,7 @@ function userWin(userChoice, computerChoice) {
 }
 
 function userLose(userChoice, computerChoice) {
-
-    const userChoice_div = document.getElementById(userChoice);
+  const userChoice_div = document.getElementById(userChoice);
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
@@ -62,9 +58,7 @@ function userLose(userChoice, computerChoice) {
 
   userChoice_div.classList.add("red-glow");
 
-  setTimeout(function () {
-    userChoice_div.classList.remove("red-glow");
-  }, 540);
+  setTimeout(() => userChoice_div.classList.remove("red-glow"), 540);
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
@@ -72,8 +66,7 @@ function userLose(userChoice, computerChoice) {
 }
 
 function userDraw(userChoice, computerChoice) {
-
-    const userChoice_div = document.getElementById(userChoice);
+  const userChoice_div = document.getElementById(userChoice);
   result_div.innerHTML = `${convertToWord(
     userChoice
   )}${smallUserWord} meets ${convertToWord(
@@ -82,9 +75,7 @@ function userDraw(userChoice, computerChoice) {
 
   userChoice_div.classList.add("gray-glow");
 
-  setTimeout(function () {
-    userChoice_div.classList.remove("gray-glow");
-  }, 540);
+  setTimeout(() => userChoice_div.classList.remove("gray-glow"), 540);
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
