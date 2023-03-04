@@ -44,12 +44,25 @@ function userLose(userChoice, computerChoice) {
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
 
+  result_div.innerHTML = `${convertToWord(
+    userChoice
+  )}${smallUserWord} loses to ${convertToWord(
+    computerChoice
+  )}${smallcompWord}. You Lose!😒`;
+
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
   console.log("User Loses");
 }
 
 function userDraw(userChoice, computerChoice) {
+
+    result_div.innerHTML = `${convertToWord(
+        userChoice
+      )}${smallUserWord} meets ${convertToWord(
+        computerChoice
+      )}${smallcompWord}. Its a draw! 🤔`;
+
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
   console.log("Its a draw");
