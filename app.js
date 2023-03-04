@@ -10,18 +10,22 @@ const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 
-main();
+function game(userChoice) {
+  console.log("⭐⭐ ⭐" + userChoice);
+}
 
 function main() {
   rock_div.addEventListener("click", function () {
-    console.log("You clicked on rock");
+    game("r");
   });
 
   paper_div.addEventListener("click", function () {
-    console.log("You clicked on paper");
+    game("p");
   });
 
   scissors_div.addEventListener("click", function () {
-    console.log("You clicked on scissor");
+    game("s");
   });
 }
+
+main();
