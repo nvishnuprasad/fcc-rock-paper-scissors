@@ -77,3 +77,8 @@ header > h1 {
   padding: 10px;
   display: inline-block;
 }
+
+.choice:hover {
+    cursor: pointer;
+    background: #24272e;
+}
