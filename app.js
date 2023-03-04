@@ -22,6 +22,8 @@ function convertToWord(letter) {
 }
 
 function userWin(userChoice, computerChoice) {
+
+  const userChoice_div = document.getElementById(userChoice);
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
@@ -32,7 +34,11 @@ function userWin(userChoice, computerChoice) {
     computerChoice
   )}${smallcompWord}. You Win! 🔥`;
 
-  document.getElementById(userChoice).classList.add('green-glow');
+  userChoice_div.classList.add("green-glow");
+
+  setTimeout(function () {
+    userChoice_div.classList.remove("green-glow");
+  }, 540);
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
@@ -42,6 +48,8 @@ function userWin(userChoice, computerChoice) {
 }
 
 function userLose(userChoice, computerChoice) {
+
+    const userChoice_div = document.getElementById(userChoice);
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
@@ -52,17 +60,31 @@ function userLose(userChoice, computerChoice) {
     computerChoice
   )}${smallcompWord}. You Lose!😒`;
 
+  userChoice_div.classList.add("red-glow");
+
+  setTimeout(function () {
+    userChoice_div.classList.remove("red-glow");
+  }, 540);
+
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
   console.log("User Loses");
 }
 
 function userDraw(userChoice, computerChoice) {
+
+    const userChoice_div = document.getElementById(userChoice);
   result_div.innerHTML = `${convertToWord(
     userChoice
   )}${smallUserWord} meets ${convertToWord(
     computerChoice
   )}${smallcompWord}. Its a draw! 🤔`;
+
+  userChoice_div.classList.add("gray-glow");
+
+  setTimeout(function () {
+    userChoice_div.classList.remove("gray-glow");
+  }, 540);
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
