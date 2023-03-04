@@ -12,6 +12,18 @@ const scissors_div = document.getElementById("scissors");
 
 const choice = ["r", "p", "s"];
 
+function userWin() {
+  console.log("User Wins");
+}
+
+function userLose() {
+  console.log("User Loses");
+}
+
+function userDraw() {
+  console.log("Its a draw");
+}
+
 function game(userChoice) {
   const computerChoice = getComputerChoice();
   console.log("Computer " + computerChoice);
@@ -21,17 +33,17 @@ function game(userChoice) {
     case "pr":
     case "sp":
     case "rs":
-      console.log("User Wins");
+      userWin();
       break;
     case "rp":
     case "ps":
     case "sr":
-      console.log("User Loses");
+      userLose();
       break;
     case "rr":
     case "pp":
     case "ss":
-      console.log("Its a draw");
+      userDraw();
       break;
   }
 }
