@@ -12,11 +12,13 @@ const scissors_div = document.getElementById("scissors");
 
 const choice = ["r", "p", "s"];
 
+const smallUserWord = "user".fontsize(3).sub();
+const smallcompWord = "comp".fontsize(3).sub();
 
-function convertToWord(letter){
-if (letter === "r" ) return "Rock";
-if (letter === "p" ) return "Paper";
-if (letter === "s" ) return "Scissors";
+function convertToWord(letter) {
+  if (letter === "r") return "Rock";
+  if (letter === "p") return "Paper";
+  if (letter === "s") return "Scissors";
 }
 
 function userWin(userChoice, computerChoice) {
@@ -24,7 +26,11 @@ function userWin(userChoice, computerChoice) {
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
 
-  result_div.innerHTML = convertToWord(userChoice) + " beats " + convertToWord(computerChoice) + ". You Win! 🔥"
+  result_div.innerHTML = `${convertToWord(
+    userChoice
+  )}${smallUserWord} beats ${convertToWord(
+    computerChoice
+  )}${smallcompWord}. You Win! 🔥`;
 
   console.log("Computer " + computerChoice);
   console.log("User  " + userChoice);
