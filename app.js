@@ -112,15 +112,13 @@ function getComputerChoice() {
 getComputerChoice();
 
 function main() {
-  rock_div.addEventListener("click", function () {
+  rock_div.addEventListener("click", () => {
     game("r");
   });
-
-  paper_div.addEventListener("click", function () {
+  paper_div.addEventListener("click", () => {
     game("p");
   });
-
-  scissors_div.addEventListener("click", function () {
+  scissors_div.addEventListener("click", () => {
     game("s");
   });
 }
