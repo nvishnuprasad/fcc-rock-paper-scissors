@@ -12,45 +12,52 @@ const scissors_div = document.getElementById("scissors");
 
 const choice = ["r", "p", "s"];
 
-function userWin() {
-    userScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
+function userWin(userChoice, computerChoice) {
+  userScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+
+  console.log("Computer " + computerChoice);
+  console.log("User  " + userChoice);
+
   console.log("User Wins");
-  console.log(userScore)
+  console.log(userScore);
 }
 
-function userLose() {
-    computerScore++
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
+function userLose(userChoice, computerChoice) {
+  computerScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+
+  console.log("Computer " + computerChoice);
+  console.log("User  " + userChoice);
   console.log("User Loses");
 }
 
-function userDraw() {
+function userDraw(userChoice, computerChoice) {
+  console.log("Computer " + computerChoice);
+  console.log("User  " + userChoice);
   console.log("Its a draw");
 }
 
 function game(userChoice) {
   const computerChoice = getComputerChoice();
-  console.log("Computer " + computerChoice);
-  console.log("User  " + userChoice);
 
   switch (userChoice + computerChoice) {
     case "pr":
     case "sp":
     case "rs":
-      userWin();
+      userWin(userChoice, computerChoice);
       break;
     case "rp":
     case "ps":
     case "sr":
-      userLose();
+      userLose(userChoice, computerChoice);
       break;
     case "rr":
     case "pp":
     case "ss":
-      userDraw();
+      userDraw(userChoice, computerChoice);
       break;
   }
 }
