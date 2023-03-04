@@ -8,6 +8,17 @@ const result_div = document.querySelector(".result")
 
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
-const scissor_div = document.getElementById("scissors");
+const scissors_div = document.getElementById("scissors");
 
 
+rock_div.addEventListener('click', function() {
+    console.log("You clicked on rock")
+})
+
+paper_div.addEventListener('click', function() {
+    console.log("You clicked on paper")
+})
+
+scissors_div.addEventListener('click', function() {
+    console.log("You clicked on scissor")
+})
